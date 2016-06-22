@@ -87,7 +87,6 @@ body {
 	list-style: none;
 }
 
-
 .item-detail {
 	display: flex;
 	margin: 40px;
@@ -108,29 +107,3 @@ body {
 .item-title-event {
 	text-align: center;
 }
-
-.section-event-register {
-	width: 90%;
-	margin: 0 auto;
-	padding: 20px;
-	border: 1px solid;
-}
-
-.item-registro {
-	width: 100%;
-	display: block;
-}
-
-.item-date-person {
-	display: flex;
-	height: 40px;
-}
-
-.item-register {
-	width: 50%;
-}
-
-.item-register input {
-	margin: 0 auto;
-}
-
