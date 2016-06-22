@@ -1,7 +1,16 @@
-# Hola Mundo Node Docker
+# App Web con Marionette Node Express y Docker
 
-Este proyecto es una linea base de node más express en un Docker
-Se puede hacer corres tanto en local (sin docker) o bien dentro de un contenedor
+Este proyecto utiliza técnologias como:
+
+ * Node JS
+ * Express
+ * Handlerbars
+ * Marionette
+ * Backbone
+ * JQuery
+ * Docker
+
+Se puede hacer correr tanto en local (sin docker) o bien dentro de un contenedor
 
 Para construir la imagen de Docker
 
