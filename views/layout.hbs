@@ -17,13 +17,6 @@
 
 {{{body}}}
 
-
-<script type="text/javascript" src="/js/vendor/jquery.js"></script>
-<script type="text/javascript" src="/js/vendor/json2.js"></script>
-<script type="text/javascript" src="/js/vendor/underscore.js"></script>
-<script type="text/javascript" src="/js/vendor/backbone.js"></script>
-<script type="text/javascript" src="/js/vendor/backbone.marionette.js"></script>
-
 <script type="text/template" id="static-template">
 
             <div class="event-poster__decoration" style="background-color: rgb(234, 100, 29);">
@@ -87,87 +80,17 @@
     <section class="container-events"></section>
 </script>
 
+<script type="text/javascript" src="/js/vendor/jquery.js"></script>
+<script type="text/javascript" src="/js/vendor/json2.js"></script>
+<script type="text/javascript" src="/js/vendor/underscore.js"></script>
+<script type="text/javascript" src="/js/vendor/backbone.js"></script>
+<script type="text/javascript" src="/js/vendor/backbone.marionette.js"></script>
+<script type="text/javascript" src="/js/app.js" ></script>
+<script type="text/javascript" src="/js/entities/evento.js" ></script>
+<script type="text/javascript" src="/js/apps/eventos/list/list_controller.js" ></script>
+<script type="text/javascript" src="/js/apps/eventos/list/list_view.js" ></script>
+
 <script type="text/javascript">
-    var EventManager = new Marionette.Application();
-    EventManager.Evento = Backbone.Model.extend();
-
-    EventManager.EventosCollection = Backbone.Collection.extend({
-        model: EventManager.Evento
-    });
-
-    EventManager.addRegions({
-        mainRegion: "#main-region"
-    });
-
-    EventManager.StaticView = Marionette.ItemView.extend({
-        tagName: 'article',
-        className: 'item-event',
-        template: '#static-template'
-    });
-
-    EventManager.EventosView = Marionette.CollectionView.extend({
-        tagName: "section",
-        className: "container-events",
-        childView: EventManager.StaticView,
-
-        onBeforeRender: function () {
-            console.log("Antes de mostrar las vistas")
-        },
-        onBeforeAddChild: function (childView) {
-            console.log(childView);
-        }
-
-    });
-
-    EventManager.on('start', function () {
-        var eventModel1 = new EventManager.Evento({
-            id: 1,
-            dia: "Jue, Jun 19",
-            hora: "06:00 AM",
-            name: "Curso Marionette",
-            categoria: "Desarrollo web",
-            lugar: "Santiago, Chile"
-        });
-
-        var eventModel2 = new EventManager.Evento({
-            id: 2,
-            dia: "Jue, Jun 20",
-            hora: "06:00 AM",
-            name: "Curso Backbone",
-            categoria: "Desarrollo web",
-            lugar: "Santiago, Chile"
-        });
-
-        var eventModel3 = new EventManager.Evento({
-            id: 3,
-            dia: "Jue, Jun 21",
-            hora: "06:00 AM",
-            name: "Curso Java",
-            categoria: "Desarrollo web",
-            lugar: "Santiago, Chile"
-        });
-
-        var eventModel4 = new EventManager.Evento({
-            id: 4,
-            dia: "Jue, Jun 21",
-            hora: "06:00 AM",
-            name: "Curso JavaScript",
-            categoria: "Desarrollo web",
-            lugar: "Santiago, Chile"
-        });
-        
-        var eventosColecion = new EventManager.EventosCollection([eventModel1, eventModel2, eventModel3]);
-
-        var eventosListView = new EventManager.EventosView({
-            collection: eventosColecion
-        });
-
-        $("#btn-add-item").on('click', function () {
-            eventosColecion.add(eventModel4);
-        });
-
-        EventManager.mainRegion.show(eventosListView);
-    })
     EventManager.start();
 </script>
 </body>
