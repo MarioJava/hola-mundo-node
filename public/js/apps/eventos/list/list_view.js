@@ -15,6 +15,13 @@ EventManager.module("EventosApp.List", function (List, EventManager, Backbone, M
         }
     });
 
+    List.EventosView = Marionette.CompositeView.extend({
+        tagName: 'section',
+        template: '#eventList-template',
+        childView: List.StaticView,
+        childViewContainer: '.container-events'
+    });
+   /*
     List.EventosView = Marionette.CollectionView.extend({
         tagName: "section",
         className: "container-events",
@@ -25,4 +32,5 @@ EventManager.module("EventosApp.List", function (List, EventManager, Backbone, M
         }
 
     });
+    */
 });
