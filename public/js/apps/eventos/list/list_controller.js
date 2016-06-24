@@ -11,7 +11,8 @@ EventManager.module("EventosApp.List", function(List,
 
             eventosListView.on("childview:evento:show", function(
                 childView, model){
-                EventManager.trigger("event:show", model.get('id'));
+                //EventManager.trigger("event:show", model.get('id'));
+                EventManager.EventosApp.Show.Controller.showEvento(model);
             });
 
             EventManager.mainRegion.show(eventosListView);
