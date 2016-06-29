@@ -4,12 +4,10 @@ EventManager.module("EventosApp.Show", function(Show,
     Show.Controller = {
 
         showEvento: function (id) {
-            var eventos = EventManager.request("eventos:entities");
-
-            var model = eventos.get(id);
+            var evento = EventManager.request("evento:entity", id);
 
             var eventoView = new Show.Event({
-                model: model
+                model: evento
             });
 
             eventoView.on("showList:eventos", function(model){
