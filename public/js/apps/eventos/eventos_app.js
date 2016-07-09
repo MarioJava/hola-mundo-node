@@ -1,8 +1,8 @@
-EventManager.module("EventosApp", function( EventosApp,
-                                            EventManager, Backbone, Marionette, $, _) {
+EventManager.module("EventosApp", function(EventosApp,
+                                           EventManager, Backbone, Marionette, $, _){
 
     EventosApp.Router = Marionette.AppRouter.extend({
-        appRoutes : {
+        appRoutes: {
             "eventos": "listEventos",
             "eventos/:id": "showEvento"
         }
@@ -14,6 +14,7 @@ EventManager.module("EventosApp", function( EventosApp,
         },
 
         showEvento: function (id) {
+            console.log(id);
             EventosApp.Show.Controller.showEvento(id);
         }
     };
@@ -23,7 +24,7 @@ EventManager.module("EventosApp", function( EventosApp,
         API.listEventos();
     });
 
-    EventManager.on("event:show", function(id){
+    EventManager.on("evento:show", function(id){
         EventManager.navigate("eventos/" + id);
         API.showEvento(id);
     });

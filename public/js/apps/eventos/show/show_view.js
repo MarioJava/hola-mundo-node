@@ -1,9 +1,20 @@
 EventManager.module("EventosApp.Show", function(Show,
                                                 EventManager, Backbone, Marionette, $, _){
 
+    Show.Layout = Marionette.LayoutView.extend({
+        tagName: 'section',
+        className: 'section-event-register',
+        template: '#events-register-layout',
+
+        regions: {
+            eventRegion: '#event-item',
+            panelRegister: '#event-register'
+        }
+    });
+
     Show.Event = Marionette.ItemView.extend({
-        tagName: "section",
-        className: "item-detail",
+        tagName: 'section',
+        className: 'item-detail',
         template: "#detalle-template",
 
         events: {
@@ -13,5 +24,11 @@ EventManager.module("EventosApp.Show", function(Show,
         atrasEvento: function (e) {
             this.trigger("showList:eventos", this.model);
         }
+    });
+
+    Show.Register = Marionette.ItemView.extend({
+        tagName: 'section',
+        className: 'item-registro',
+        template: '#register-template'
     });
 });
